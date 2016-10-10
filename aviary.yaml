@@ -1,3 +1,45 @@
-test:
-  - things
-  - also, stuff
+version: 1
+
+exclude:
+  - tests?/
+
+raven_monitored_classes: null
+
+raven_monitored_files:
+  ^app.yaml$:
+    reason: Contains URL route authorization logic
+  ^auth.py$:
+    reason: Contains auth-related functions
+  ^main.py$:
+    reason: Main application instantiation logic
+  ^src/api/auth_api.py$:
+    reason: Contains auth API logic
+  ^src/models/auth.py$:
+    reason: Contains authentication models and logic
+
+raven_monitored_functions: null
+
+raven_monitored_keywords:
+  ^@require_access:
+    comments: false
+    languages:
+      - py
+    not_file:
+      - test(s)?/
+    reason: '@require_access protects routes. Make sure no futher authorization checks
+      are necessary for the routes in question.
+
+
+      '
+  ^@require_login:
+    comments: false
+    languages:
+      - py
+    not_file:
+      - test(s)?/
+    reason: '@require_login protects routes. Make sure no futher authorization checks
+      are necessary for the routes in question.
+
+
+      '
+
