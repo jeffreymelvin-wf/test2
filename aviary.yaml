@@ -1,3 +1,16 @@
-test:
-  - things
-  - also, stuff
+version: 1
+
+exclude:
+  - tests?/
+
+raven_monitored_classes: null
+
+raven_monitored_files: null
+
+raven_monitored_functions:
+  ^lib/transports/AbstractTransport.js$:
+    AbstractTransport.prototype.connect:
+      reason: Session management
+
+raven_monitored_keywords: null
+
