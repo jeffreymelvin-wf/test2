@@ -1,3 +1,15 @@
-test:
-  - things
-  - also, stuff
+version: 1
+
+exclude:
+  - tests?/
+
+raven_monitored_classes: null
+
+raven_monitored_files:
+  ^lib/src/session/handler.dart:
+    reason: Session management
+
+raven_monitored_functions: null
+
+raven_monitored_keywords: null
+
